@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kopi Senja | Kafe di Sumedang</title>
+  <meta name="description" content="Kopi Senja: kafe nyaman dengan kopi dari biji lokal pilihan. Lihat menu dan pesan lewat WhatsApp." />
+  <meta name="theme-color" content="#1f1612" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-in">
+      <a href="#top" class="brand" id="brand">Kopi Senja</a>
+      <button class="burger" id="burger" aria-label="Buka menu navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="links" id="links">
+        <a href="#tentang">Tentang</a>
+        <a href="#menu">Menu</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#" class="btn btn-sm" id="navWa" target="_blank" rel="noopener">Pesan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap hero-in">
+        <p class="status" id="status"><i></i><span>Memeriksa jam buka…</span></p>
+        <h1 id="heroTitle"></h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn">Lihat Menu</a>
+          <a href="#" class="btn btn-ghost" id="heroWa" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+        </div>
+      </div>
+      <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="section" id="tentang">
+      <div class="wrap">
+        <div class="about reveal">
+          <p class="kicker">Tentang Kami</p>
+          <h2>Secangkir cerita dari <em>sore yang tenang</em></h2>
+          <p id="aboutText"></p>
+        </div>
+        <div class="features" id="features"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="menu">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">Menu</p>
+          <h2>Pilih favoritmu</h2>
+        </div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Kategori menu"></div>
+        <div class="menu-grid" id="menuGrid"></div>
+        <p class="note">Harga sudah termasuk pajak. Klik "Pesan" untuk kirim pesanan lewat WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section" id="testimoni">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">Kata Mereka</p>
+          <h2>Pelanggan yang sudah mampir</h2>
+        </div>
+        <div class="testi" id="testi"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="lokasi">
+      <div class="wrap loc">
+        <div class="reveal">
+          <p class="kicker">Lokasi &amp; Jam Buka</p>
+          <h2>Mampir, kami tunggu</h2>
+          <p class="addr" id="addr"></p>
+          <ul class="hours" id="hours"></ul>
+          <div class="hero-cta">
+            <a href="#" class="btn" id="mapBtn" target="_blank" rel="noopener">Buka di Google Maps</a>
+            <a href="#" class="btn btn-ghost-dark" id="igBtn" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="map-card reveal" aria-hidden="true">
+          <div class="pin">📍</div>
+          <p id="mapName"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong id="footName"></strong>
+      <p id="footTag"></p>
+      <small>© <span id="year"></span> <span id="footName2"></span>. Semua hak dilindungi.</small>
+    </div>
+  </footer>
+
+  <a href="#" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4h.1c6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.3zM12 21.7a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.9-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4s.3-1.3.2-1.4-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
