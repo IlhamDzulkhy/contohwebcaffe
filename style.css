@@ -65,6 +65,11 @@ ul { list-style: none; }
     radial-gradient(ellipse at 10% 90%, rgba(200,102,58,.18), transparent 50%),
     linear-gradient(170deg, #2a1d17 0%, var(--espresso) 100%);
 }
+.hero.has-photo {
+  background:
+    linear-gradient(180deg, rgba(31,22,18,.55) 0%, rgba(31,22,18,.78) 100%),
+    var(--hero-img) center / cover no-repeat;
+}
 .hero-in { position: relative; z-index: 2; }
 .status {
   display: inline-flex; align-items: center; gap: 8px;
@@ -138,6 +143,11 @@ ul { list-style: none; }
   background: linear-gradient(135deg, #f3dfc2, #e9c79c);
   display: flex; align-items: center; justify-content: center;
 }
+.item .em { position: relative; overflow: hidden; }
+.item .em img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.item .em .fallback { position: relative; z-index: 0; }
+.item .em.has-img { width: 88px; height: 88px; }
+.item .em.has-img .fallback { display: none; }
 .item .info { flex: 1; min-width: 0; }
 .item h3 { font: 700 1.1rem var(--serif); display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .badge { font: 700 .65rem var(--sans); letter-spacing: .08em; text-transform: uppercase; background: var(--terra); color: #fff; padding: 2px 8px; border-radius: 999px; }

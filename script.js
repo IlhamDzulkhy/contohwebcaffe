@@ -26,6 +26,17 @@
   $("footTag").textContent = C.tagline;
   $("year").textContent = new Date().getFullYear();
 
+  // Foto latar hero (opsional). Dipakai hanya jika file berhasil dimuat.
+  if (C.heroImage) {
+    const pre = new Image();
+    pre.onload = () => {
+      const hero = document.querySelector(".hero");
+      hero.style.setProperty("--hero-img", 'url("' + C.heroImage.replace(/"/g, "%22") + '")');
+      hero.classList.add("has-photo");
+    };
+    pre.src = C.heroImage;
+  }
+
   const hello = waLink("Halo " + C.name + ", saya mau tanya/pesan.");
   ["navWa", "heroWa", "waFloat"].forEach((id) => ($(id).href = hello));
   $("mapBtn").href = C.mapUrl;
@@ -53,7 +64,20 @@
       .filter((m) => activeCat === "Semua" || m.cat === activeCat)
       .forEach((m) => {
         const card = el("article", "item");
-        card.appendChild(el("div", "em", m.emoji));
+        const thumb = el("div", "em", m.emoji);
+        if (m.image) {
+          const img = el("img");
+          img.src = m.image;
+          img.alt = m.name;
+          img.loading = "lazy";
+          img.addEventListener("load", () => thumb.classList.add("has-img"));
+          // Jika foto gagal dimuat, kembali ke emoji
+          img.addEventListener("error", () => { img.remove(); thumb.classList.remove("has-img"); });
+          thumb.textContent = "";
+          thumb.appendChild(img);
+          thumb.appendChild(el("span", "fallback", m.emoji));
+        }
+        card.appendChild(thumb);
         const info = el("div", "info");
         const h = el("h3", "", m.name);
         if (m.best) h.appendChild(el("span", "badge", "Favorit"));
